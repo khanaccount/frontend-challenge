@@ -1,0 +1,64 @@
+@use "../../../styles/variables.scss" as *;
+
+.cards {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 48px;
+    grid-row-gap: 52px;
+    margin-bottom: 30px;
+
+    img {
+        width: 225px;
+        height: 225px;
+    }
+}
+.noLikesBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    .text {
+        text-transform: uppercase;
+    }
+    .backLink {
+        background-color: $bgSecondary;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        border-radius: 20px;
+        width: 200px;
+        height: 30px;
+        border: 1px solid transparent;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+            transition: all 0.3s ease-in;
+
+            background-color: white;
+            color: $bgSecondary;
+            border: 1px solid $bgSecondary;
+        }
+    }
+}
+.downloadMoreBtn {
+    display: flex;
+    margin: 0 auto;
+    width: 250px;
+    height: 25px;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease-in;
+    &:hover {
+        background: $bgPrimary;
+        color: white;
+        transition: all 0.3s ease-in;
+    }
+}
