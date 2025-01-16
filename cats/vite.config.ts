@@ -9,6 +9,9 @@ export default defineConfig({
         postcss: {
             plugins: [tailwindcss, autoprefixer],
         },
+        modules: {
+            scopeBehaviour: "local",
+        },
     },
 
     plugins: [reactRouter(), tsconfigPaths()],
