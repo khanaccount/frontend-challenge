@@ -1,0 +1,83 @@
+.card {
+    position: relative;
+    transition: transform 0.3s ease;
+    .catImg {
+        width: 225px;
+        height: 225px;
+
+        .card:hover & {
+            transform: scale(1.2);
+        }
+    }
+
+    .heartSvg {
+        position: absolute;
+        cursor: pointer;
+        bottom: 28px;
+        right: 28px;
+        width: 40px;
+        height: 37px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+        transform: scale(1.2);
+
+        box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
+        .heartSvg {
+            opacity: 1;
+        }
+    }
+    .heartSvg.active {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1100px) {
+    .card {
+        .catImg {
+            width: 200px;
+            height: 200px;
+        }
+
+        .heartSvg {
+            bottom: 20px;
+            right: 20px;
+            width: 35px;
+            height: 32px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .card {
+        .catImg {
+            width: 180px;
+            height: 180px;
+        }
+
+        .heartSvg {
+            bottom: 18px;
+            right: 18px;
+            width: 30px;
+            height: 28px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        .catImg {
+            width: 150px;
+            height: 150px;
+        }
+
+        .heartSvg {
+            bottom: 15px;
+            right: 15px;
+            width: 25px;
+            height: 22px;
+        }
+    }
+}
