@@ -1,5 +1,5 @@
 # Используем Node.js 22.11.0
-FROM node:22.11.0
+FROM node:22.11.0 AS build
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
@@ -16,8 +16,14 @@ COPY . .
 # Строим проект
 RUN yarn build
 
-# Открываем порт 5173 (по умолчанию для Vite)
-EXPOSE 5173
+# Для продакшн-сервера используем Nginx
+FROM nginx:alpine
 
-# Запускаем проект с Vite в режиме разработки
-CMD ["yarn", "dev"]
+# Копируем собранные файлы из build этапа в директорию Nginx
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Открываем порт 80 для Nginx
+EXPOSE 80
+
+# Запускаем Nginx
+CMD ["nginx", "-g", "daemon off;"]
