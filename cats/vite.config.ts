@@ -4,6 +4,6 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-    base: "/frontend-challenge/cats/",
+    base: "/frontend-challenge/",
     plugins: [reactRouter(), tsconfigPaths()],
 });
