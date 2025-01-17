@@ -8,8 +8,7 @@ export default defineConfig({
         outDir: "dist",
     },
     server: {
-        // Specify the development server port
-        port: 3001,
+        port: 3000,
     },
     // Base name of your app
     base: "/",
